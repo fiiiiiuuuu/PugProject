@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Сайт на Pug
+        link(rel="stylesheet", href="../css/style.css")
+    body
+        - var games = [{title: 'Garrys Mod', releaseDate: 'Дата релиза: 29 ноя. 2006 г.', image: '/PugProject/img/gmod.jpg'}, {title: 'Counter-Strike 2', releaseDate: 'Дата релиза: 21 авг. 2012 г.', image: '/PugProject/img/cs2.jpg'}, {title: 'Teardown', releaseDate: 'Дата релиза: 21 апр. 2022 г.', image: '/PugProject/img/Teardown.jpg'}, {title: 'DayZ', releaseDate: 'Дата релиза: 13 дек. 2018 г.', image: '/PugProject/img/DayZ.jpg'}, {title: 'PAYDAY 2', releaseDate: 'Дата релиза: 13 авг. 2013 г.', image: '/PugProject/img/PAYDAY2.jpg'}, {title: 'SCP: Secret Laboratory', releaseDate: 'Дата релиза: 29 дек. 2017 г.', image: '/PugProject/img/SCPSL.jpg'}, {title: 'Ravenfield', releaseDate: 'Дата релиза: 18 мая. 2017 г.', image: '/PugProject/img/RF.jpg'}, {title: 'People Playground', releaseDate: 'Дата релиза: 23 июл. 2019 г.', image: '/PugProject/img/PP.jpg'}];
+        .container 
+            h1.title Мои любимые игры
+            p Это список моих любимых игр. Garrys Mod - игра песочница. CS2 - шутер от первого лица. Teardown - воксельная песочница с реалистичной физикой. DayZ - выживание в зомби апокалипсисе. Payday 2 - симулятор ограблений. SCPSL - онлайн игра по вселенной SCP. Ravenfield - игра песочница, копия Battlefield для слабых пк. People PLayground -  игра песочница.
+            ul.grid 
+                each game in games
+                    li.grid__item
+                        article.card 
+                            a.card__image(href="")
+                                img(src=game.image, alt=game.title)
+                            h2.card__title 
+                                a(href="")= game.title
+                            span.card__date= game.releaseDate

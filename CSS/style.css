@@ -24,6 +24,7 @@ a {
     text-decoration: none;
     display:inline-block;
     color: #333;
+    transition: color 0.2s ease;
 }
 ul {
     list-style: none;
@@ -74,6 +75,9 @@ img {
 }
 .card:hover {
     transform: scale(1.1);
+}
+.card:hover a {
+    color: #6d7264;
 }
 @media (min-width: 480px) {
     .container {
